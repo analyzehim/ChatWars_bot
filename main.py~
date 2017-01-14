@@ -32,11 +32,6 @@ for white_str in f:
 	break
 f.close()
 
-f = open('symbols/blue','r')
-for blue_str in f:
-	break
-f.close()
-
 report_str ='/report'
 
 def execute(exec_str):
@@ -46,11 +41,6 @@ def attackWhite():
 	execute(attack_str)
 	time.sleep(5)
 	execute(white_str)
-
-def attackBlue():
-	execute(attack_str)
-	time.sleep(5)
-	execute(blue_str)
 
 def forest():
 	execute(quest_str)
@@ -96,10 +86,7 @@ def loop():
 			log_event("Non-night forest, sleep 320")
 		else:
 			log_event("too son, {0}".format(get_hour()))
-		if get_hour() <=4:
-			attackBlue()
-		else:
-			defen()
+		defen()
 		log_event('Normal defen')
 
 	except Exception as e:
@@ -128,5 +115,4 @@ if __name__ == "__main__":
 		except Exception as e:
 			log_event(str(e))
 			break
-
 
