@@ -41,7 +41,7 @@ def loop():
     if flag:
         print "Action on {0}:{1}:{2}".format(hour, minute, sec)
     else:
-        print "Action on {0}:{1}:{2}".format(hour, minute, sec)
+        print "No action on {0}:{1}:{2}".format(hour, minute, sec)
 
 
 if __name__ == "__main__":
