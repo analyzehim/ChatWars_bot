@@ -87,19 +87,18 @@ def loop():
 			
 		if (get_hour() >= 2) and (get_hour() <= 9):
 			corovan()
-			time.sleep(320)
+			
 			log_event("Night corovan, sleep 320")
+			time.sleep(320)
 
 		elif (get_hour() >=9) and (get_hour() <=14):
 			forest()
-			time.sleep(320)
+			
 			log_event("Non-night forest, sleep 320")
+			time.sleep(320)
 		else:
 			log_event("too son, {0}".format(get_hour()))
-		if get_hour() <=4:
-			attackBlue()
-		else:
-			defen()
+		defen()
 		log_event('Normal defen')
 
 	except Exception as e:
@@ -110,7 +109,7 @@ def loop():
 		log_event("Error defen")
 
 	log_event('sleep 30 min')	
-	time.sleep(1800)
+	time.sleep(900)
 
 
 if __name__ == "__main__":
@@ -121,12 +120,11 @@ if __name__ == "__main__":
 			loop()
 			
 			if time.time() - timestamp >= 9000:
-				timestamp = time.tme()
+				timestamp = time.time()
 				ask_report()
 				log_event('Ask report')
 
 		except Exception as e:
 			log_event(str(e))
-			break
 
 
