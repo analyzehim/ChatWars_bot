@@ -2,129 +2,45 @@ import os
 import time
 import datetime
 
-f = open('symbols/quest','r')
-for quest_str in f:
-	break
-f.close()
-
-f = open('symbols/forest','r')
-for forest_str in f:
-	break
-f.close()
-
-f = open('symbols/corovan','r')
-for corovan_str in f:
-	break
-f.close()
-
-f = open('symbols/defen','r')
-for defen_str in f:
-	break
-f.close()
-
-f = open('symbols/attack','r')
-for attack_str in f:
-	break
-f.close()
-
-f = open('symbols/white','r')
-for white_str in f:
-	break
-f.close()
-
-f = open('symbols/blue','r')
-for blue_str in f:
-	break
-f.close()
-
-report_str ='/report'
-
-def execute(exec_str):
-	os.system('send-telegram.sh "{0}"'.format(exec_str))
-
-def attackWhite():
-	execute(attack_str)
-	time.sleep(5)
-	execute(white_str)
-
-def attackBlue():
-	execute(attack_str)
-	time.sleep(5)
-	execute(blue_str)
-
-def forest():
-	execute(quest_str)
-	time.sleep(10)
-	execute(forest_str)
-
-def corovan():
-	execute(quest_str)
-	time.sleep(10)
-	execute(corovan_str)
-
-def ask_report():
-	execute(report_str)
-
-def defen():
-	execute(defen_str)
-
-def get_hour():
-	return int(str(datetime.datetime.now()).split(' ')[1].split(':')[0])
+from const import *
+from proto import *
 
 
-def log_event(log_str):
-	f = open("log.txt","a")
-	print log_str
-	f.write(str(datetime.datetime.now())+' >>> ' + log_str + '\n')
-	f.close()
+def action(hour, minute):
+    if minute == 10:
+        if hour in battle_hours:
+            ask_report()
+            log_event('Ask report')
+
+    if minute == 50:
+        if hour in [h-1 for h in battle_hours]:
+            defen()
+            log_event('Defen')
+
+    if (hour >= 4) and (hour < 7):
+        if minute % 10 == 0:
+            corovan()
+            log_event("Corovan")
+
+    if hour in forest_hours:
+        if minute == 20:
+            time.sleep(hour * 10)
+            forest()
+            log_event("Forest")
 
 
 def loop():
-
-	log_event('_____Begin of loop_____')
-	try:
-
-			
-		if (get_hour() >= 2) and (get_hour() <= 9):
-			corovan()
-			
-			log_event("Night corovan, sleep 320")
-			time.sleep(320)
-
-		elif (get_hour() >=9) and (get_hour() <=14):
-			forest()
-			
-			log_event("Non-night forest, sleep 320")
-			time.sleep(320)
-		else:
-			log_event("too son, {0}".format(get_hour()))
-		defen()
-		log_event('Normal defen')
-
-	except Exception as e:
-		log_event(str(e))
-
-
-		defen()
-		log_event("Error defen")
-
-	log_event('sleep 30 min')	
-	time.sleep(900)
+    (hour, minute) = get_time()
+    action(hour, minute)
+    time.sleep(40)
 
 
 if __name__ == "__main__":
-	timestamp = time.time()
-	ask_report()
-	while True:
-		try:
-			loop()
-			
-			if time.time() - timestamp >= 9000:
-				timestamp = time.time()
-				ask_report()
-				log_event('Ask report')
+    while True:
+        try:
+            loop()
 
-		except Exception as e:
-			log_event(str(e))
+        except Exception as e:
+            log_event(str(e))
 
 
