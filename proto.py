@@ -48,8 +48,12 @@ def get_minute():
     return int(str(datetime.datetime.now()).split(' ')[1].split(':')[1])
 
 
+def get_sec():
+    return int(str(datetime.datetime.now()).split(' ')[1].split(':')[2])
+
+
 def get_time():
-    return(get_hour(), get_minute())
+    return(get_hour(), get_minute(), get_sec())
 
 
 def log_event(log_str):
