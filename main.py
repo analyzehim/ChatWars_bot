@@ -42,15 +42,13 @@ def loop():
         print "Action on {0}:{1}:{2}".format(hour, minute, sec)
     else:
         print "Action on {0}:{1}:{2}".format(hour, minute, sec)
-    time.sleep(40)
 
 
 if __name__ == "__main__":
     while True:
         try:
             loop()
+            time.sleep(40)
 
         except Exception as e:
             log_event(str(e))
-
-

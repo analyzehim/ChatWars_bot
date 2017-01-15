@@ -49,7 +49,7 @@ def get_minute():
 
 
 def get_sec():
-    return int(str(datetime.datetime.now()).split(' ')[1].split(':')[2])
+    return int(str(datetime.datetime.now()).split(' ')[1].split(':')[2].split('.')[0])
 
 
 def get_time():
