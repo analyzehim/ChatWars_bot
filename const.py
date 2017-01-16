@@ -36,5 +36,7 @@ f.close()
 report_str = '/report'
 
 battle_hours = [1, 4, 7, 10, 13, 16, 19, 22]
-forest_hours = [8, 9, 10, 11, 12, 13, 14, 15]
+forest_hours = [8, 9, 10, 11, 12, 13, 14, 15, 16]
+corovan_minutes = [10, 20, 30, 40]
+corovan_hours = [4, 5, 6]
 PAUSE = 10
