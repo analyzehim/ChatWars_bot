@@ -50,6 +50,5 @@ if __name__ == "__main__":
         try:
             loop()
             time.sleep(40)
-
         except Exception as e:
             log_event(str(e))
