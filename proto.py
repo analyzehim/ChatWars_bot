@@ -32,6 +32,12 @@ def corovan():
     execute(corovan_str)
 
 
+def cave():
+    execute(quest_str)
+    time.sleep(PAUSE)
+    execute(cave_str)
+
+
 def ask_report():
     execute(report_str)
 

@@ -8,28 +8,25 @@ from proto import *
 
 def action(hour, minute):
     flag = False
-    if minute == 5:
-        if hour in battle_hours:
+    if hour in battle_hours:
+        if minute == 5:
             ask_report()
             log_event('Ask report')
             flag = True
-
-    elif minute == 45:
-        if hour in [h-1 for h in battle_hours]:
+    if hour in [h - 1 for h in battle_hours]:
+        if minute == 45:
             defen()
             log_event('Defen')
             flag = True
-
-    elif minute in corovan_minutes:
-        if hour in corovan_hours:
+    if hour in corovan_hours:
+        if minute in corovan_minutes:
             corovan()
             log_event("Corovan")
             flag = True
-
-    elif minute == 20:
-        if hour in forest_hours:
+    if hour in cave_hours:
+        if minute == 20:
             time.sleep(hour * 10)
-            forest()
+            cave()
             log_event("Forest")
             flag = True
     return flag
