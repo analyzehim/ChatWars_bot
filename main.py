@@ -38,7 +38,6 @@ def action(hour, minute):
             log_event("Cave")
             flag = True
             return flag
-
     return flag
 
 
