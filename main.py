@@ -13,22 +13,26 @@ def action(hour, minute):
             ask_report()
             log_event('Ask report')
             flag = True
+
     if hour in [h - 1 for h in battle_hours]:
         if minute == 45:
             defen()
             log_event('Defen')
             flag = True
+
     if hour in corovan_hours:
         if minute in corovan_minutes:
             corovan()
             log_event("Corovan")
             flag = True
+
     if hour in cave_hours:
         if minute == 20:
             time.sleep(hour * 10)
             cave()
             log_event("Forest")
             flag = True
+
     return flag
 
 
