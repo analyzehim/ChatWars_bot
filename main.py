@@ -1,7 +1,3 @@
-import os
-import time
-import datetime
-
 from const import *
 from proto import *
 
@@ -19,19 +15,29 @@ def action(hour, minute):
             defen()
             log_event('Defen')
             flag = True
+            return flag
+
+        elif hour in corovan_hours:
+            if minute in corovan_minutes:
+                corovan()
+                log_event("Corovan")
+                flag = True
+                return flag
 
     if hour in corovan_hours:
         if minute in corovan_minutes:
             corovan()
             log_event("Corovan")
             flag = True
+            return flag
 
     if hour in cave_hours:
         if minute == 20:
             time.sleep(hour * 10)
             cave()
-            log_event("Forest")
+            log_event("Cave")
             flag = True
+            return flag
 
     return flag
 
@@ -49,7 +55,7 @@ if __name__ == "__main__":
     while True:
         try:
             loop()
-            time.sleep(40)
+            time.sleep(60)
 
         except Exception as e:
             log_event(str(e))
