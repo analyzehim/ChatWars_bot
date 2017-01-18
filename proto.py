@@ -19,6 +19,19 @@ def attackBlue():
     time.sleep(PAUSE)
     execute(blue_str)
 
+def attack(castle):
+    try:
+        castle_str = attack_dict[castle]
+        execute(attack_str)
+        time.sleep(PAUSE)
+        execute(castle_str)
+
+    except:
+        defen()
+    return
+
+
+
 
 def forest():
     execute(quest_str)

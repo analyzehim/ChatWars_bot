@@ -12,24 +12,10 @@ def action(hour, minute):
 
     if hour in [h - 1 for h in battle_hours]:
         if minute == 45:
-            defen()
-            log_event('Defen')
+            castle = get_castle()
+            attack(castle)
+            log_event('Attack {0}'.format(castle))
             flag = True
-            return flag
-
-        elif hour in corovan_hours:
-            if minute in corovan_minutes:
-                corovan()
-                log_event("Corovan")
-                flag = True
-                return flag
-
-    if hour in corovan_hours:
-        if minute in corovan_minutes:
-            corovan()
-            log_event("Corovan")
-            flag = True
-            return flag
 
     if hour in cave_hours:
         if minute == 20:
@@ -37,7 +23,7 @@ def action(hour, minute):
             cave()
             log_event("Cave")
             flag = True
-            return flag
+
     return flag
 
 
