@@ -28,6 +28,11 @@ for white_str in f:
     break
 f.close()
 
+f = open('symbols/red', 'r')
+for red_str in f:
+    break
+f.close()
+
 f = open('symbols/black', 'r')
 for black_str in f:
     break
