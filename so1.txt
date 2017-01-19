@@ -1,0 +1,22 @@
+Telegram-cli version 1.4.1, Copyright (C) 2013-2015 Vitaly Valtman
+Telegram-cli comes with ABSOLUTELY NO WARRANTY; for details type `show_license'.
+This is free software, and you are welcome to redistribute it
+under certain conditions; type `show_license' for details.
+Telegram-cli uses libtgl version 2.1.0
+Telegram-cli includes software developed by the OpenSSL Project
+for use in the OpenSSL Toolkit. (http://www.openssl.org/)
+I: config dir=[/home/l4rs/.telegram-cli]
+> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K[32;1m [11:19] [0m [0;31mChat Wars[0m[32;1m ««« /report[0m
+> [K[34;1m [11:19] [0m [0;31mChat Wars[0m[34;1m >>> 🇻🇦Haram ⚔:14+11 🛡:3+15 (16 ур.)
+Твои результаты в бою:
+🔥Опыт: 29 ед
+💰Золото: -13 монет[0m
+> [K[34;1m [11:19] [0m [0;31mChat Wars[0m[34;1m >>> 🇻🇦Haram ⚔:14+11 🛡:3+15 (16 ур.)
+Твои результаты в бою:
+🔥Опыт: 29 ед
+💰Золото: -13 монет[0m
+> [K> [K> [K> [K> [K> [K> [K[33;1mUser [0;31mdeleted user#117797858[33;1m deleted
+[0m> [K[33;1mUser [0;31mdeleted user#124045169[33;1m deleted
+[0m> [K> [K> [K> [K> [K> [K[32;1m [11:20] [0m [0;31mChat Wars[0m[32;1m <<< /report[0m
+> All done. Exit
+halt
