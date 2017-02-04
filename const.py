@@ -50,7 +50,7 @@ f.close()
 
 report_str = '/report'
 
-battle_hours = [1, 4, 7, 10, 13, 16, 19, 22]
+battle_hours = [24, 4, 8, 12, 16, 20]
 forest_hours = [8, 9, 10, 11, 12, 13, 14, 15, 16]
 cave_hours = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22]
 corovan_minutes = [10, 20, 30, 40, 50]
